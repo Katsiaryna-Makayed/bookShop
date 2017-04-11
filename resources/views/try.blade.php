@@ -2,25 +2,20 @@
 
 @section('content')
 <div class="container">
-	
-	<div align='center'> 
-		<h3> {{$cat_number->name}}</h2> 
-	</div> 
-	<div class="row-fluid col-md-12"> 
-		<div class="col-md-4"> 
-			
-		</div> 
-		<div class="col-md-8"> 
-			<p>
+	<h2>{{$book->name}}</h2> <!-- взять из бд-->  
 
-					здесь будут выводиться книжки красивенько
-					для этой одной категории 
+	<div class="row">
+
+		<img src = "{{asset('/public/uploads'.$book->picture)}}" alt = "{{$book->name}} картинка" width="150"  height="150">
+		<p>Цена: {{$book->price}}</p>
+		<p>Автор: {{$book->author}}</p>
 
 
-			</p> 
-		</div> 
-	</div> 
-	<hr> 
+		<p>Описание: {{$book->description}}</p>
 
+
+	<div>
+  
+        
 </div>
 @endsection

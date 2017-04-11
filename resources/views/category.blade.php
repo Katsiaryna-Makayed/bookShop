@@ -3,23 +3,18 @@
 @section('content')
 <div class="container">
   
-<h2>Название категории</h2> <!-- взять из бд-->  
+<h2>{{$category_one->name}}</h2> <!-- взять из бд-->  
 
 	<div class="row">
 	
+	@foreach($category as $one)
+		<a href="{{url('genre/'.$one->id)}}">
+			<img src = "{{asset('/public/uploads'.$one->picture)}}" alt = "{{$one->name}} картинка" width="150"  height="150">
+		</a>
+		<p>{{$one->name}}</p>
+    @endforeach
 
-		@foreach($result as $one)
-			<p>
-				$one->name
-			</p>
-
-
-			<li><a href="{{url('genre/'.$one->id)}}">{{$one->name}}</a></li>
-		@endforeach
-
-
-
-
+<!--
 	<img src = "public/img/category1.jpg" alt = "Картинка" height="150" width="150">
 	<p>Подкатегория1</p>
 	
@@ -28,6 +23,7 @@
 
 	<img src = "public/img/category1.jpg" alt = "Картинка" height="150" width="150">
 	<p>Подкатегория1</p>
+-->
 	<div>
   
         
