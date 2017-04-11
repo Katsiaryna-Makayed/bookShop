@@ -2,9 +2,9 @@
 
 @section('content')
 
-<p>{!! link_to_route(config('quickadmin.route').'.goods.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
+<p>{!! link_to_route(config('quickadmin.route').'.books.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
 
-@if ($goods->count())
+@if ($books->count())
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">{{ trans('quickadmin::templates.templates-view_index-list') }}</div>
@@ -17,40 +17,36 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>name</th>
+<th>category</th>
 <th>author</th>
-<th>url</th>
-<th>picture</th>
 <th>price</th>
-<th>year</th>
-<th>vip</th>
 <th>showhide</th>
-<th>cat_id</th>
-<th>user_id</th>
+<th>small photo</th>
+<th>vip</th>
+<th>photo</th>
 
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($goods as $row)
+                    @foreach ($books as $row)
                         <tr>
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ $row->name }}</td>
-<td>{{ isset($row->authors->fio) ? $row->authors->fio : '' }}</td>
-<td>{{ $row->url }}</td>
-<td>@if($row->picture != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->picture }}">@endif</td>
-<td>{{ $row->price }}</td>
-<td>{{ $row->year }}</td>
-<td>{{ $row->vip }}</td>
-<td>{{ $row->showhide }}</td>
 <td>{{ isset($row->categories->name) ? $row->categories->name : '' }}</td>
-<td>{{ isset($row->user->email) ? $row->user->email : '' }}</td>
+<td>{{ isset($row->authors->fio) ? $row->authors->fio : '' }}</td>
+<td>{{ $row->price }}</td>
+<td>{{ $row->showhide }}</td>
+<td>@if($row->small photo != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->small photo }}">@endif</td>
+<td>{{ $row->vip }}</td>
+<td>@if($row->photo != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->photo }}">@endif</td>
 
                             <td>
-                                {!! link_to_route(config('quickadmin.route').'.goods.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
-                                {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.goods.destroy', $row->id))) !!}
+                                {!! link_to_route(config('quickadmin.route').'.books.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
+                                {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.books.destroy', $row->id))) !!}
                                 {!! Form::submit(trans('quickadmin::templates.templates-view_index-delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}
                             </td>
@@ -65,7 +61,7 @@
                     </button>
                 </div>
             </div>
-            {!! Form::open(['route' => config('quickadmin.route').'.goods.massDelete', 'method' => 'post', 'id' => 'massDelete']) !!}
+            {!! Form::open(['route' => config('quickadmin.route').'.books.massDelete', 'method' => 'post', 'id' => 'massDelete']) !!}
                 <input type="hidden" id="send" name="toDelete">
             {!! Form::close() !!}
         </div>

@@ -1,0 +1,12 @@
+.item{
+    background: #333;    
+    text-align: center;
+    height: 450px !important;
+	
+	
+}
+.carousel{
+    margin-top: 10px;
+	height: 450px ;
+	margin-bottom: 25px;
+}

@@ -6,15 +6,9 @@ use Illuminate\Http\Request;
 
 
 use App\Http\Requests;
+//use App\Book;
 
-use Sentinel; 
 
-/*class XXXController extends Controller {
-
-    public function getUserId() {
-        return Sentinel::getUser()->getUserId();
-    }
-*/
 class BasketController extends Controller
 {
     /**

@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-	@foreach($all as $one) 
+	
 	<div align='center'> 
-		<h3> {{$one->name}}</h2> 
+		<h3> {{$cat_number->name}}</h2> 
 	</div> 
 	<div class="row-fluid col-md-12"> 
 		<div class="col-md-4"> 
@@ -12,14 +12,15 @@
 		</div> 
 		<div class="col-md-8"> 
 			<p>
-			Категория: {{$one->category_id}}
-			<br>Цена: {{$one->price}}
-			<br>Добавлено: {{$one->updated_at}}
-			<br>Описание: {{$one->body}} 
+
+					здесь будут выводиться книжки красивенько
+					для этой одной категории 
+
+
 			</p> 
 		</div> 
 	</div> 
 	<hr> 
-	@endforeach 
+
 </div>
 @endsection
