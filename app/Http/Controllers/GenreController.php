@@ -24,6 +24,9 @@ class GenreController extends Controller
 
 	public function getBook($id){
 		$book = Products::where('showhide', 'show')->where('id', $id)->first();
-		return view('try')->with('book', $book);	
+		$author = $book->authors_id;
+		$author_books = Products::where('showhide', 'show')->where('authors_id', $author)->get();
+		return view('try')->with('book', $book)->with('author_books', $author_books);	
 	}
 }
+

@@ -25,23 +25,30 @@
 
 
 
-    @foreach($books as $one)
+    @foreach($books as $product)
   
 <div class="col-sm-3 col-xs-3">
-    <p>{{$one->name}}</p>
- <img src = "{{asset('/public/uploads'.$one->picture)}}" alt = "{{$one->name}} Картинка" width="200"  height="100">
+    <p>{{$product->name}}</p>
+ <img src = "{{asset('/public/uploads'.$product->picture)}}" alt = "{{$product->name}} Картинка" width="200"  height="100">
   
   <div class="btn-group">
-  <a href="{{url('book/'.$one->id)}}"><button class="btn">Просмотр</button></a>
-  <button class="btn">В корзину</button>
-  
+  <a href="{{url('book/'.$product->id)}}"><button class="btn">Просмотр</button></a>
+
+<form method="POST" action="{{url('cart')}}">
+<input type="hidden" name="product_id" value="{{$product->id}}">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="btn btn-fefault add-to-cart">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                Add to cart
+                                            </button>
+                                        </form>
+   
 </div>
   </div>
 
       @endforeach
 
-
-
+ 
 
 
 <!--
@@ -67,9 +74,10 @@
   </div>
   
   -->
-    </div>
+</div>
   
 </div>
+
 @endsection
 
 

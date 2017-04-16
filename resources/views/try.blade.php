@@ -14,8 +14,24 @@
 		<p>Описание: {{$book->description}}</p>
 
 
-	<div>
+	
+
   
         
 </div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Другие книги автора </h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+				@foreach($author_books as $one)
+					<img src = "{{asset('/public/uploads'.$one->picture)}}" alt = "{{$one->name}}" width="150"  height="150">
+      			@endforeach
+				</div>
+			</div>
+		</div>
+</div>
+
 @endsection

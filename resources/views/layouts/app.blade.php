@@ -45,7 +45,9 @@
 				<a class = "ref" href="{{ url('/sales') }}">Акции</a>
 				<a class = "ref" href="{{ url('/new') }}">Новинки</a>
 				<a class = "ref" href="{{ url('/ourcontacts') }}">Контакты</a>
-				<a class = "ref" href="{{ url('/basket') }}">Корзина</a>
+				<a class = "ref" href="{{ url('/cart') }}">Корзина</a>
+
+
 			</div >
 			</div> 
 		@yield('content')		
