@@ -17,6 +17,11 @@ Route::get('/', 'BaseController@getIndex');
 Route::post('/cart', 'CartController@index');
 Route::get('/cart', 'CartController@index');
 Route::get('/delete-cart-product/{id}', 'CartController@removeItem');
+
+
+
+Route::post('/book/{id}', 'CommentsController@save');
+
 //Route::resource('cart', 'CartController', ['only' => ['index', 'store', 'update', 'destroy']]);
 Route::get('/about', 'BaseController@index');
 //Route::get('/sales', 'BaseController@getIndex');

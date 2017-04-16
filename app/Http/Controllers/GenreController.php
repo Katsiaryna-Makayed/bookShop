@@ -11,6 +11,7 @@ class GenreController extends Controller
     public function getIndex($id){
 
     	$category = Categories::where('showhide', 'show')->where('parent_id', $id)->get();
+    	
 		if(sizeof($category) == 0){
 			$books=Products::where('showhide', 'show')->where('categories_id', $id)->get();
 			return view('good')->with('books', $books);	
@@ -26,7 +27,11 @@ class GenreController extends Controller
 		$book = Products::where('showhide', 'show')->where('id', $id)->first();
 		$author = $book->authors_id;
 		$author_books = Products::where('showhide', 'show')->where('authors_id', $author)->get();
-		return view('try')->with('book', $book)->with('author_books', $author_books);	
+
+		$comments=Products::where('showhide', 'show')->find($id)->comments; // выбираем все комментарии, который относятся к статье
+
+
+		return view('try')->with('book', $book)->with('author_books', $author_books)->with('comments', $comments);	
 	}
 }
 
