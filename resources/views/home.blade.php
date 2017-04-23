@@ -53,7 +53,7 @@
 			<div class="panel-body">
 				<div class="row">
 					@foreach($sale_books as $one)
-						<img src = "{{asset('/public/uploads'.$one->picture)}}" alt = "{{$one->name}}" width="150"  height="150">
+						<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="150"  height="150">
       				@endforeach
       				<!--
 					<img src = "public/img/sale1.png" alt = "Картинка" height="150" width="150">
@@ -72,7 +72,7 @@
 			<div class="panel-body">
 				<div class="row">
 				@foreach($new_books as $one)
-					<img src = "{{asset('/public/uploads'.$one->picture)}}" alt = "{{$one->name}}" width="150"  height="150">
+					<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="150"  height="150">
       			@endforeach
 
 
@@ -93,7 +93,7 @@
 			<div class="panel-body">
 				<div class="row">
 					@foreach($pop_books as $one)
-						<img src = "{{asset('/public/uploads/thumb'.$one->picture)}}" alt = "{{$one->name}}" width="150"  height="150">
+						<img src = "{{asset('/public/uploads/thumb/'.$one->photo)}}" alt = "{{$one->name}}" width="150"  height="150">
 	      			@endforeach
 	      			<!--
 					<img src = "public/img/book1.png" alt = "Картинка" height="150" width="150">

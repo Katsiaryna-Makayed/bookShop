@@ -16,7 +16,7 @@
 	<div class="container" id ="wrap">   
 				 <div class="row">
 					<div class="col-md-4 ">
-						<img src = "public/img/maple.jpg"  width = "200" height = "80">            
+						<img src = "{{asset('public/img/maple.jpg')}}"  width = "200" height = "80">            
 					</div>					
 					<div class= "col-md-3 col-md-offset-5 ">
 						@if (Auth::guest())
@@ -47,9 +47,33 @@
 				<a class = "ref" href="{{ url('/ourcontacts') }}">Контакты</a>
 				<a class = "ref" href="{{ url('/cart') }}">Корзина</a>
 
+				<form class="d5" name="search" action="{{url('/search')}}" method="post">
+					{{ csrf_field() }} 
+					<input type="text" name="search" placeholder="Поиск...">
+					<button type="submit">search</button>
+				</form>
+
 
 			</div >
 			</div> 
+			<div class="breadcrumbs">
+            	<ol class="breadcrumb">
+                	@if(isset($book))
+                	<li><a href="{{ url('/') }}">{{$book->id}}</a></li>
+
+                	@endif
+                	<li><a href="{{ url('/') }}">Home</a></li>
+                	<li class="active">
+                		<a href={{url('genre/'.$category->id)}}>{{$category->name}}</a>
+                	</li>
+                	@if(isset($category2))
+                	<li class="active">
+                		<a href={{url('genre/'.$category->id.'/'.$category2->id)}}>
+                		{{$category2->name}}</a>
+                	</li>
+                	@endif
+            	</ol>
+        	</div>
 		@yield('content')		
 	</div> 
 	<div class="container">   

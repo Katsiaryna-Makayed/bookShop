@@ -3,12 +3,6 @@
 @section('content')  
 <section id="cart_items">
     <div class="container">
-        <div class="breadcrumbs">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Shopping Cart</li>
-            </ol>
-        </div>
         <div class="table-responsive cart_info">
             @if(count($cart))
             <table class="table table-condensed">

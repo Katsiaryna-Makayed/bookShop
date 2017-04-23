@@ -29,10 +29,16 @@
   
 <div class="col-sm-3 col-xs-3">
     <p>{{$product->name}}</p>
- <img src = "{{asset('/public/uploads'.$product->picture)}}" alt = "{{$product->name}} Картинка" width="200"  height="100">
+ <img src = "{{asset('/public/uploads/'.$product->photo)}}" alt = "{{$product->name}} Картинка" width="200"  height="100">
   
   <div class="btn-group">
+ 
+
+
   <a href="{{url('book/'.$product->id)}}"><button class="btn">Просмотр</button></a>
+
+
+
 
 <form method="POST" action="{{url('cart')}}">
 <input type="hidden" name="product_id" value="{{$product->id}}">
@@ -75,7 +81,7 @@
   -->
 </div>
   
-</div>
+
 
 @endsection
 
