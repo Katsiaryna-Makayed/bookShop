@@ -37,27 +37,7 @@
 
 
 
-@if(!Auth::guest())
 
-<form method="POST">
-<input type="hidden" name="author" value="{{$user->name}}">
-<input type="hidden" name="email" value="{{$user->email}}"><br>
-Ваше сообщение:<br>
-<textarea name="content"></textarea><br>
-<input type="hidden" name="_token" value="{{csrf_token()}}">
-<input type="submit" value="Отправить">
-</form>
-@else 
-Чтобы Вы могли оставлять комментарий, зарегистрируйтесь!!
-@endif
-
-		<div class="comments">
-<ul>
-@foreach($comments as $comment)
-<li>Автор: {{$comment->author}}<br>{{$comment->content}}</li>
-@endforeach
-</ul>
-</div>
 </div>
 
 @endsection
