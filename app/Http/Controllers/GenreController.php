@@ -28,14 +28,13 @@ class GenreController extends Controller
 		$author = $book->authors_id;
 		$author_books = Products::where('showhide', 'show')->where('authors_id', $author)->get();
 
-		//$user = Auth::user();
+		$user = Auth::user();
 
 
-		//$comments=Products::where('showhide', 'show')->find($id)->comments; // выбираем все комментарии, который относятся к статье
+		$comments=Products::where('showhide', 'show')->find($id)->comments; // выбираем все комментарии, который относятся к статье
 
 
-		//return view('try')->with('book', $book)->with('author_books', $author_books)->with('comments', $comments)->with('user', $user);	
-		return view('try')->with('book', $book)->with('author_books', $author_books);	
+		return view('try')->with('book', $book)->with('author_books', $author_books)->with('comments', $comments)->with('user', $user);	
 	}
 }
 

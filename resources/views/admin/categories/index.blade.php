@@ -2,9 +2,9 @@
 
 @section('content')
 
-<p>{!! link_to_route(config('quickadmin.route').'.products.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
+<p>{!! link_to_route(config('quickadmin.route').'.categories.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
 
-@if ($products->count())
+@if ($categories->count())
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">{{ trans('quickadmin::templates.templates-view_index-list') }}</div>
@@ -17,40 +17,26 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>name</th>
-                        <th>year</th>
-<th>author</th>
-<th>category</th>
-<th>photo</th>
 <th>showhide</th>
-<th>price</th>
-<th>quantity</th>
-<th>sold</th>
-<th>sale</th>
+<th>parent_id</th>
 
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($products as $row)
+                    @foreach ($categories as $row)
                         <tr>
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ $row->name }}</td>
-                            <td>{{ $row->year }}</td>
-<td>{{ isset($row->authors->fio) ? $row->authors->fio : '' }}</td>
-<td>{{ isset($row->categories->name) ? $row->categories->name : '' }}</td>
-<td>@if($row->photo != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->photo }}">@endif</td>
 <td>{{ $row->showhide }}</td>
-<td>{{ $row->price }}</td>
- <td>{{ $row->quantity }}</td>
-  <td>{{ $row->sold }}</td>
-<td>{{ $row->sale }}</td>
+<td>{{ $row->parent_id }}</td>
 
                             <td>
-                                {!! link_to_route(config('quickadmin.route').'.products.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
-                                {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.products.destroy', $row->id))) !!}
+                                {!! link_to_route(config('quickadmin.route').'.categories.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
+                                {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.categories.destroy', $row->id))) !!}
                                 {!! Form::submit(trans('quickadmin::templates.templates-view_index-delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}
                             </td>
@@ -65,7 +51,7 @@
                     </button>
                 </div>
             </div>
-            {!! Form::open(['route' => config('quickadmin.route').'.products.massDelete', 'method' => 'post', 'id' => 'massDelete']) !!}
+            {!! Form::open(['route' => config('quickadmin.route').'.categories.massDelete', 'method' => 'post', 'id' => 'massDelete']) !!}
                 <input type="hidden" id="send" name="toDelete">
             {!! Form::close() !!}
         </div>

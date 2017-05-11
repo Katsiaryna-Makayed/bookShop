@@ -37,7 +37,9 @@
 						<a class = "ref" href="{{ url('/#') }}" data-toggle="dropdown" class="dropdown-toggle">Категории
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-
+							@foreach($catalogs as $one)
+								<li><a href="{{url('genre/'.$one->id)}}">{{$one->name}}</a></li>
+							@endforeach
 						</ul>
 						</span>	
 				
@@ -46,31 +48,33 @@
 						<a class = "ref" href="{{ url('/ourcontacts') }}">Контакты</a>
 						<a class = "ref" href="{{ url('/cart') }}">Корзина</a>
 						
-<!-- 						<span class="d5" method="post" >
-							<input type="text" placeholder="Поиск...">
-							<button type="submit"></button>
-						</span>
-
- -->						
- <form class="d5" name="search" action="{{url('/search')}}" method="post">
+						<form class="search" name="search" action="{{url('/search')}}" method="post">
 					{{ csrf_field() }} 
 					<input type="text" name="search" placeholder="Поиск...">
 					<button type="submit"></button>
 				</form>
-				
+						
 					</div >
 					</div>	
 			</div> 
-			
+			<div class="breadcrumbs">
+            	<ol class="breadcrumb">
+                	@if(isset($book))
+                	<li><a href="{{ url('/') }}">{{$book->id}}</a></li>
 
-
-
-
-
-
-
-
-
+                	@endif
+                	<li><a href="{{ url('/') }}">Home</a></li>
+                	<li class="active">
+                		<a href={{url('genre/'.$category->id)}}>{{$category->name}}</a>
+                	</li>
+                	@if(isset($category2))
+                	<li class="active">
+                		<a href={{url('genre/'.$category->id.'/'.$category2->id)}}>
+                		{{$category2->name}}</a>
+                	</li>
+                	@endif
+            	</ol>
+        	</div>
 		@yield('content')		
 	</div> 
 	<div class="container">   

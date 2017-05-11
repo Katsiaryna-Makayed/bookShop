@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateCommentsRequest extends FormRequest {
+class UpdateCategoriesRequest extends FormRequest {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class CreateCommentsRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'id' => 'required|unique:comments,id,'.$this->comments, 
+            'name' => 'required', 
             
 		];
 	}
