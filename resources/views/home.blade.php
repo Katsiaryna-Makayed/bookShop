@@ -53,7 +53,7 @@
 					<div class="row">				
 					@foreach($sale_books as $one)										
 						<div class="col-sm-3 col-xs-3">				
-						<a class = "border" href="{{ url('/new') }}">
+						<a class = "border" href="{{url('book/'.$one->id)}}">
 						<div class="good-ref">						
 								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="140"  height="140">
 								<div>{{$one->name}}</div>
@@ -76,7 +76,7 @@
 					<div class="row">				
 					@foreach($new_books as $one)										
 						<div class="col-sm-3 col-xs-3">				
-						<a class = "border" href="{{ url('/new') }}">
+						<a class = "border" href="{{url('book/'.$one->id)}}">
 						<div class="good-ref">						
 								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="140"  height="140">
 								<div>{{$one->name}}</div>
@@ -102,7 +102,7 @@
 			<div class="row">				
 					@foreach($pop_books as $one)										
 						<div class="col-sm-6 col-xs-4">				
-						<a class = "border" href="{{ url('/new') }}">
+						<a class = "border" href="{{url('book/'.$one->id)}}">
 						<div class="good-ref">						
 								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="140"  height="140">
 								<div>{{$one->name}}</div>

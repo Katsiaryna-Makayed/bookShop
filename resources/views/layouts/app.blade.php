@@ -59,20 +59,41 @@
 			</div> 
 			<div class="breadcrumbs">
             	<ol class="breadcrumb">
-                	@if(isset($book))
-                	<li><a href="{{ url('/') }}">{{$book->id}}</a></li>
+            		<li><a href="{{ url('/') }}">Главная</a></li>
+            		
+            		@if(isset($second))
+	            		<li><a href="{{url('#')}}">{{$second}}</a></li>
+	            	@endif
 
-                	@endif
-                	<li><a href="{{ url('/') }}">Home</a></li>
-                	<li class="active">
-                		<a href={{url('genre/'.$category->id)}}>{{$category->name}}</a>
-                	</li>
-                	@if(isset($category2))
-                	<li class="active">
-                		<a href={{url('genre/'.$category->id.'/'.$category2->id)}}>
-                		{{$category2->name}}</a>
-                	</li>
-                	@endif
+
+	                @if(isset($book))
+	                	<li><a href={{url('genre/'.$book->categories->parent_id.'/'.$book->categories->id)}}>{{$book->categories->name}}</a></li>
+	                	<li><a href={{url('author/'.$book->authors->id)}}>{{$book->authors->fio}}</a></li>
+	                	
+	                	<li><a href={{url('book/'.$book->id) }}>{{$book->name}}</a></li>
+	                @endif
+
+
+	                @if(isset($category))
+	                <li class="active">
+	                	<a href={{url('genre/'.$category->id)}}>{{$category->name}}</a>
+	                </li>
+		                @if(isset($category2))
+		                <li class="active">
+		                	<a href={{url('genre/'.$category->id.'/'.$category2->id)}}>
+		                	{{$category2->name}}</a>
+		                </li>
+		                @endif
+	                @endif
+
+	                @if(isset($authorBread))
+	                <li class="active">
+	                	<a href={{url('author/'.$authorBread->id)}}>{{$authorBread->fio}}</a>
+	                </li>
+	                @endif
+	                
+
+
             	</ol>
         	</div>
 		@yield('content')		

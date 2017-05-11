@@ -42,9 +42,22 @@
                             <a href="{{ url('delete-cart-product/' .$item->rowId) }}"><i class="fa fa-times"></i></a>
                         </td>
                     </tr>
+                    
                     @endforeach
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="cart_quantity">
+                            <div class="cart_total_price">{{$count}}</div>
+                        </td>
+                        <td class="cart_total">
+                            <div class="cart_total_price">{{$sum}}</div>
+                        </td>
+                        <td></td>
+                    </tr>
                     @else
-                <p>You have no items in the shopping cart</p>
+                <p>Корзина пуста!</p>
                 @endif
                 </tbody>
             </table>
@@ -52,4 +65,3 @@
     </div>
 </section> <!--/#cart_items-->
 @endsection
-
