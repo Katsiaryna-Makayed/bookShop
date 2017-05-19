@@ -69,8 +69,7 @@
 	                @if(isset($book))
 	                	<li><a href={{url('genre/'.$book->categories->parent_id.'/'.$book->categories->id)}}>{{$book->categories->name}}</a></li>
 	                	<li><a href={{url('author/'.$book->authors->id)}}>{{$book->authors->fio}}</a></li>
-	                	
-	                	<li><a href={{url('book/'.$book->id) }}>{{$book->name}}</a></li>
+	                	<li><a href={{url('book/'.$book->id)}}>{{$book->name}}</a></li>
 	                @endif
 
 

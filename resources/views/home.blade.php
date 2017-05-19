@@ -57,7 +57,7 @@
 						<div class="good-ref">						
 								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="140"  height="140">
 								<div>{{$one->name}}</div>
-								<div >{{$one->authors->fio}}</div>
+								<div>{{$one->authors->fio}}</div>
 								<div>{{$one->price}}</div>
 						
 						</div>
@@ -80,7 +80,7 @@
 						<div class="good-ref">						
 								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="140"  height="140">
 								<div>{{$one->name}}</div>
-								<div >{{$one->authors->fio}}</div>
+								<div>{{$one->authors->fio}}</div>
 								<div>{{$one->price}}</div>
 						
 						</div>

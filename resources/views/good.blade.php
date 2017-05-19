@@ -15,23 +15,11 @@
                 <div class="panel-body" id="filter-panel"> 
                     
                     <p>Популярность</p>
-                        
-                    <div class="radio">
+                    <div class="radio">   
                         <input id="popular-first" type="radio" name="popularity" value="popular-first">
                         <label for="popular-first">популярные сначала</label>
                         <input id="popular-last" type="radio" name="popularity" value="popular-last">
                         <label for="popular-last">популярные в конце</label>
-                    </div>
-                    
-                    <p>Обложка</p> 
-
-                    <div class="checkbox">        
-                        <input id="soft-cover" type="checkbox" name="cover" value="soft-cover">
-                        <label for="soft-cover">мягкая обложка</label>        
-                        <input id="cardboard" type="checkbox" name="cover" value="cardboard">
-                        <label for="cardboard">картоная</label>       
-                        <input id="hard-cover" type="checkbox" name="cover" value="hard-cover">
-                        <label for="hard-cover">твердая обложка</label>
                     </div>
                     
                     <p>Год выхода</p>

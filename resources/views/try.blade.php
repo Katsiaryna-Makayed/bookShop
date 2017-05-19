@@ -13,10 +13,19 @@
 	<div>Цена: {{$book->price}}</div>
 	<div>Автор: <a href="{{url('author/'.$book->authors_id)}}">{{$book->authors->fio}}</a></div>
 	<div>Описание: {{$book->description}}</div>
+	                    <form method="POST" action="{{url('cart')}}">
+                        <input type="hidden" name="product_id" value="{{$book->id}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-fefault add-to-cart" id="small">
+                            <i class="fa fa-shopping-cart"></i> В корзину
+                        </button>
+                        
+                    </form> 
 </div>
 
 </div>
 <br>
+
 <!--ДРУГИЕ КНИГИ АВТОРА-->	
 	<div class="panel panel-default">
 			<div class="panel-heading">

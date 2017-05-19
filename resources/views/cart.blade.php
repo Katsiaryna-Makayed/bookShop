@@ -43,6 +43,7 @@
                         </td>
                     </tr>
                     
+
                     @endforeach
                     <tr>
                         <td></td>
@@ -56,6 +57,13 @@
                         </td>
                         <td></td>
                     </tr>
+
+                    <form method="POST" action="{{url('cart')}}">
+                        <textarea name="comment"></textarea>
+                        <button type="submit" class="btn btn-fefault add-to-cart" id="small">
+                            Подтвердить
+                        </button>
+                    </form>
                     @else
                 <p>Корзина пуста!</p>
                 @endif
