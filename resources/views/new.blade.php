@@ -13,3 +13,5 @@
 	 -->
 </div>
 @endsection
+ $new_books
+ 

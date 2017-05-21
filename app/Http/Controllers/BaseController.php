@@ -60,9 +60,13 @@ class BaseController extends Controller
         
     } 
     
+    public function contact(){
+        return view('about');
+    }
     /*public function getIndex(){
         //$text = Goods:: where('url', 'index')->first();
         $all=Books::where('showhide','show')->paginate(10);     
         return view('try')->with('all', $all);      
     }*/
 }
+

@@ -56,7 +56,7 @@
     </div>
               
     <div class="col-md-10">
-
+ 
         @foreach($books as $product) 
             <div class="col-sm-4">
                 <p>{{$product->name}}</p>
@@ -70,7 +70,7 @@
                             <i class="fa fa-shopping-cart"></i> В корзину
                         </button>
                         
-                    </form>   
+                    </form>
                 </div> 
                       
             </div>

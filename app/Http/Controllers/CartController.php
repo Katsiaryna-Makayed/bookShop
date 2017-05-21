@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Cart;
 use App\Products;
 
-
+ 
 class CartController extends Controller
 {
     /**
@@ -141,6 +141,12 @@ Cart::update();
     return view('cart')->with('cart', array('cart' => $cart, 'title' => 'Welcome', 'description' => '', 'page' => 'home'));
 
     }
+
+    public function order(Request $request)
+    {
+        //
+    }
+
 }
 /*
 
