@@ -2,14 +2,16 @@
 <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
 @section('content')
 <div class="row">
-<div class="col-md-5">
-<img src = "{{asset('/public/uploads/'.$book->photo)}}" alt = "{{$book->name}} картинка" width="400"  height="400">
+
+<div class="col-md-4">
+<img src = "{{asset('/public/uploads/'.$book->photo)}}" alt = "{{$book->name}} картинка" width="336"  height="462">
 </div>
 
 
-<div class="col-md-7">
+<div class="col-md-8">
 
-	<h2>{{$book->name}}</h2>
+	<h3>{{$book->name}}</h3>
+	<hr>
 	<div>Цена: {{$book->price}}</div>
 	<div>Автор: <a href="{{url('author/'.$book->authors_id)}}">{{$book->authors->fio}}</a></div>
 	<div>Описание: {{$book->description}}</div>
@@ -34,15 +36,16 @@
 			<div class="panel-body">
 				<div class="row">				
 					@foreach($author_books as $one)									
-						<div class="col-sm-3 ">				
-						<a class = "border" href="{{url('book/'.$one->id)}}">
-						<div class="good-ref">						
-								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="150"  height="150">
-								<div>{{$one->name}}</div>						
-						</div>
+						<div class="col-sm-2 ">				
+						<a  href="{{url('book/'.$one->id)}}">
+							<div class="good-ref-small">						
+								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="148"  height="204">
+								<div class = "descr-name">{{$one->name}}</div>
+							</div>
 						</a>
 						</div>
-	      			@endforeach    			
+	      			@endforeach   
+	      			{{ $author_books->links() }} 			
 			</div>
 			</div>
 	</div>

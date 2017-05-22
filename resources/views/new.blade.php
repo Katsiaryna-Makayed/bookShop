@@ -1,17 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<h3>Новые поступления</h3> 
+<hr>
+
+					
+				@foreach($new_books as $one)										
+					<div class="col-sm-3 ">				
+						<a  href="{{url('book/'.$one->id)}}">
+							<div class="good-ref-big">						
+								<img src = "{{asset('/public/uploads/'.$one->photo)}}" alt = "{{$one->name}}" width="160"  height="220">
+								<div class = "descr-name">{{$one->name}}</div>
+								<div class = "descr-author">{{$one->authors->fio}}</div>
+								<div class = "descr-price">{{$one->price}}</div>
+						
+							</div>
+						</a>
+					</div>
+	      		@endforeach    			
 	
 	
-	<img src = "public/img/book1.png" alt = "Картинка" height="150" width="150">
-	<p>имя</p>	
-	<p>автор, год</p>	
-	<p>цена</p>	
-	<!-- 
-		массив всех книг в порядке новости $new_books
-	 -->
-</div>
+
+	
+
 @endsection
- $new_books
- 

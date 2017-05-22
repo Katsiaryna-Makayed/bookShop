@@ -30,7 +30,7 @@ class GenreController extends Controller
 		$book = Products::find($id);
 		// dd($book);
 		//$author = $book->authors_id;
-		$author_books = Products::where('showhide', 'show')->where('authors_id', $book->authors_id)->get();
+		$author_books = Products::where('showhide', 'show')->where('authors_id', $book->authors_id)->paginate(1);
 
 		$user = Auth::user();
 

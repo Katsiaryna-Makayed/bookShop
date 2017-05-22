@@ -13,11 +13,12 @@ class Order extends Model
     
     protected $fillable = [
           'body',
+          'phone',
           'comment',
           'status',
           'user_id',
     ];
-    
+
     public static $showhide = ["show" => "show", "hide" => "hide", ];
 
 
@@ -28,4 +29,4 @@ class Order extends Model
         Products::observe(new UserActionsObserver);
     }
     
-}
+} 
