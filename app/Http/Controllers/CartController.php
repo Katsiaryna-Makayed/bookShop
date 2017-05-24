@@ -47,6 +47,7 @@ class CartController extends Controller
             {
                 $price = ceil($product->price * 85)/100;
             }
+
             Cart::add(array('id' => $product_id, 'name' => $product->name, 'qty' => 1, 'price' => $price));
         }
     //increment the quantity
@@ -75,8 +76,8 @@ class CartController extends Controller
         $sum = Cart::subtotal();
         $count = Cart::count();
         $cart = Cart::content();
-
-        return view('cart', array('cart' => $cart, 'title' => 'Welcome', 'description' => '', 'page' => 'home'))->with('sum', $sum)->with('count', $count);
+                    //dd($_COOKIE);
+        return view('cart', array('cart' => $cart))->with('sum', $sum)->with('count', $count);
 
     }
 
@@ -153,16 +154,9 @@ class CartController extends Controller
       //  Cart::remove($item->rowId, $item->qty - 1);
 
         $cart = Cart::content();
-        return view('cart')->with('cart', array('cart' => $cart, 'title' => 'Welcome', 'description' => '', 'page' => 'home'));
+        return view('cart')->with('cart', array('cart' => $cart));
 
-    }
-
-    public function order(Request $request)
-    {
-
-    }
-
-
+    }           
 
 }            
 /*

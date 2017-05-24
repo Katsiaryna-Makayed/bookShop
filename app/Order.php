@@ -2,7 +2,13 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
+use Laraveldaily\Quickadmin\Observers\UserActionsObserver;
+
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Order extends Model
 {
@@ -18,8 +24,6 @@ class Order extends Model
           'status',
           'user_id',
     ];
-
-    public static $showhide = ["show" => "show", "hide" => "hide", ];
 
 
     public static function boot()

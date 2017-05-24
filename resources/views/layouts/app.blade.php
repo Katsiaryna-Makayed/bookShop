@@ -4,10 +4,10 @@
 		<title>Интернет-магазин</title>
 			<!-- Styles -->
 
-				<link href="{{asset('public/css/bootstrap.css')}}" rel="stylesheet">
-				<link href="{{asset('public/media/bootstrap/css/bootstrap-responsive.css')}}" rel="stylesheet">
-				<link href="{{asset('public/media/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
-				<link href="{{asset('public/css/general.css')}}" type="text/css" rel="stylesheet">
+				<link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet">
+				<link href="{{asset('/media/bootstrap/css/bootstrap-responsive.css')}}" rel="stylesheet">
+				<link href="{{asset('/media/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+				<link href="{{asset('/css/general.css')}}" type="text/css" rel="stylesheet">
 				<link href="{{asset('public/css/general.css')}}" type="text/css" rel="stylesheet">
 				<link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
 	</head>
