@@ -19,7 +19,7 @@
 <!--ДРУГИЕ КНИГИ АВТОРА-->	
 	<div class="panel panel-default">
 			<div class="panel-heading">
-				<h5 class="panel-title">Другие книги автора </h5>
+				<h5 class="panel-title">Книги автора </h5>
 			</div>
 			<div class="panel-body">
 				<div class="row">				

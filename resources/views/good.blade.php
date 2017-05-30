@@ -6,9 +6,9 @@
 <hr>
     <div class="col-md-2">
      
-		<div class="panel panel-default" >
+        <div class="panel panel-default" >
             <div class="panel-heading">
-              <h3 class="panel-title">Фильтры</h3>
+              <h5 class="panel-title">Фильтры</h5>
             </div>  
             <form name="filter" method="get" action="/filter/{{$category->parent_id}}/{{$category->id}}">
                 <div class="panel-body" id="filter-panel"> 
@@ -47,30 +47,53 @@
                         <input id="order" type="checkbox" name="availability" value="order">
                         <label for="order">под заказ</label>
                     </div>   
-					<div class = "butt-center">
-						<a href=""><button class="btn" id="small">Применить</button></a>
-					</div>
+                    <div class = "butt-center">
+                        <a href=""><button class="btn" id="small">Применить</button></a>
+                    </div>
                 </div>
             </form>
         
-		</div>
+        </div>
     </div>
               
     <div class="col-md-10">
  
         @foreach($books as $product) 
             <div class="col-sm-4">
-                			
-						<a  href="{{url('book/'.$product->id)}}">
-							<div class="good-ref-big">						
-								<img src = "{{asset('/public/uploads/'.$product->photo)}}" alt = "{{$product->name}}" width="160"  height="220">
-								<div class = "descr-name">{{$product->name}}</div>
-								<div class = "descr-author">{{$product->authors->fio}}</div>
-								<div class = "descr-price">{{$product->price}}</div>
-						
-							</div>
-						</a>
-					
+                            
+                        <a  href="{{url('book/'.$product->id)}}">
+                            <div class="good-ref-big">                      
+                                @if($product->sale == "no_sale")
+                                <img src = "{{asset('/public/uploads/'.$product->photo)}}" alt = "{{$product->name}}" width="160"  height="220">
+                                @endif  
+
+                                @if($product->sale == "sale_5")
+                                <div class="sale-line" >
+                                <img src = "{{asset('/public/uploads/'.$product->photo)}}" alt = "{{$product->name}}"width="160"  height="220">
+                                <span>-5%</span>
+                                </div>
+                                @endif  
+
+                                @if($product->sale == "sale_10")
+                                <div class="sale-line" >
+                                <img src = "{{asset('/public/uploads/'.$product->photo)}}" alt = "{{$product->name}}" width="160"  height="220">
+                                <span >-10%</span>
+                                </div>
+                                @endif  
+
+                                @if($product->sale == "sale_15")
+                                <div class="sale-line" >
+                                <img src = "{{asset('/public/uploads/'.$product->photo)}}" alt = "{{$product->name}}" width="160"  height="220">
+                                <span>-15%</span>
+                                </div>
+                                @endif  
+                                <div class = "descr-name">{{$product->name}}</div>
+                                <div class = "descr-author">{{$product->authors->fio}}</div>
+                                <div class = "descr-price">{{$product->price}} руб.</div>
+                        
+                            </div>
+                        </a>
+                    
                
                       
             </div>
